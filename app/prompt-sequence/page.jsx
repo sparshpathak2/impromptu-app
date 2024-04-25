@@ -71,7 +71,7 @@ const PromptSequence = () => {
     // getPromptSequenceDetails();
 
     fetchPosts()
-      console.log("UE has run")
+    console.log("UE has run")
 
   }, [promptSequenceId])
 
@@ -124,12 +124,14 @@ const PromptSequence = () => {
         `,
         backgroundSize: '12px 12px', // Adjust as needed
       }}>
-        {/* <LeftNavPromptSeq
-          postState={postState}
-          postsState={postsState}
-          tagsInputValue={tagsInputValue}
-          setTagsInputValue={setTagsInputValue}
-        /> */}
+        <Flex visibleFrom="sm">
+          <LeftNavPromptSeq
+            postState={postState}
+            postsState={postsState}
+            tagsInputValue={tagsInputValue}
+            setTagsInputValue={setTagsInputValue}
+          />
+        </Flex>
         <Container>
           <FeedPrompts
             postState={postState}

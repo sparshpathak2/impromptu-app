@@ -479,7 +479,7 @@ export function LeftNavDashboard({ workspace, folderId, foldersState, setFolders
                         underline="never"
                         fz={14}
                         c='#000000'
-                        href={`http://localhost:3000/dashboard?f=${item?._id}`}
+                        href={`/dashboard?f=${item?._id}`}
                         // key={collection.label}
                         onClick={() => setActiveCollection(item._id)}
                     // className={`${classes.collectionLink} ${activeCollection === item?._id ? classes.activeCollection : ''}`}

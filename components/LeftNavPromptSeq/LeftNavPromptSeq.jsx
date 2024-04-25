@@ -1,6 +1,6 @@
 'use client'
 
-import { TextInput, Flex, Grid, CreatableSelect, Button, Code, UnstyledButton, Badge, Text, Group, ActionIcon, Tooltip, rem } from '@mantine/core';
+import { TextInput, Container, Flex, Grid, CreatableSelect, Button, Code, UnstyledButton, Badge, Text, Group, ActionIcon, Tooltip, rem } from '@mantine/core';
 import { IconBulb, IconUser, IconCheckbox, IconSearch, IconPlus } from '@tabler/icons-react';
 //   import { UserButton } from '../UserButton/UserButton';
 import classes from './LeftNavPromptSeq.module.css';
@@ -137,8 +137,6 @@ const LeftNavPromptSeq = ({ postState, postsState, tagsInputValue, setTagsInputV
 
   return (
     <nav className={classes.navbar}>
-
-
       <EditPromptSequenceForm
         postState={postState}
         promptSequenceId={promptSequenceId}

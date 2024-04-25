@@ -1,6 +1,6 @@
 .navbar {
     background-color: var(--mantine-color-body);
-    height: calc(100vh - rem(64px));
+    height: calc(100vh - rem(54px));
     width: rem(500px);
     padding: var(--mantine-spacing-md);
     padding-top: 0;
@@ -8,7 +8,7 @@
     flex-direction: column;
     border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
     position: sticky;
-    top: rem(64px);
+    top: rem(54px);
 }
 
 .section {

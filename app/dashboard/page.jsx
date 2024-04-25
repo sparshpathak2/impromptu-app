@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Modal, Loader, Grid, ThemeIcon, ActionIcon, Card, Badge, Title, Box, TextInput, Button, Menu, Group, Center, Burger, Container, Flex, Text, Drawer, Stack, NavLink, Avatar, Textarea, Anchor, Image, Select } from '@mantine/core';
 import { LeftNavDashboard } from "../../components/LeftNavDashboard/LeftNavDashboard"
 import { LeftNavDashboardMob } from "@/components/LeftNavDashboardMob"
@@ -17,13 +17,20 @@ const Dashboard = () => {
   const [foldersState, setFoldersState] = useState([]);
   const [submitting, setSubmitting] = useState(false);
   const searchParams = useSearchParams();
-  const folderId = searchParams.get('f');
   const router = useRouter();
+  const folderId = searchParams.get('f');
+  // const folderId = router.query.f;
   const [isLoading, setIsLoading] = useState(true);
   const [leftNavBarActive, setLeftNavBarActive] = useState(false);
   const [openDrawerLeftNav, setOpenDrawerLeftNav] = useState(false);
 
-  // console.log(folderId)
+  // let folderId = ''
+
+  // if (router.query && router.query.f) {
+  //   folderId = router.query.f; // Access query parameters using router.query if available
+  // }
+
+  console.log(folderId)
   // console.log(session?.user.id)
 
   const [postState, setPostState] = useState({
@@ -194,29 +201,26 @@ const Dashboard = () => {
 
   return (
     <>
-      {isLoading &&
+      {/* {isLoading &&
         <Flex justify='center' mt={36}>
           <Loader color="blue" type="bars" size='sm' />
         </Flex>
       }
-        <Drawer hiddenFrom="sm" opened={openDrawerLeftNav} size="lg" onClose={closeLeftNavBar} zIndex='1000' radius="md" position="left">
-          <LeftNavDashboardMob
-            // postsState={postsState}
-            workspace={workspaceState}
-            folderId={folderId}
-            foldersState={foldersState}
-            setFoldersState={setFoldersState}
-            leftNavBarActive={leftNavBarActive}
-            setLeftNavBarActive={setLeftNavBarActive}
-          />
-        </Drawer>
+      <Drawer hiddenFrom="sm" opened={openDrawerLeftNav} size="lg" onClose={closeLeftNavBar} zIndex='1000' radius="md" position="left">
+        <LeftNavDashboardMob
+          workspace={workspaceState}
+          folderId={folderId}
+          foldersState={foldersState}
+          setFoldersState={setFoldersState}
+          leftNavBarActive={leftNavBarActive}
+          setLeftNavBarActive={setLeftNavBarActive}
+        />
+      </Drawer>
       {!isLoading && session && (
         <Container fluid style={{ height: 'auto' }}>
           <Grid>
             <Grid.Col span={2} py={0} mx={0} visibleFrom="sm">
-              {/* <Grid.Col span={2.5}> */}
               <LeftNavDashboard
-                // postsState={postsState}
                 workspace={workspaceState}
                 folderId={folderId}
                 foldersState={foldersState}
@@ -226,8 +230,6 @@ const Dashboard = () => {
               />
             </Grid.Col>
 
-
-            {/* <Grid.Col span={9.5} p={0} mb={20} mt={10}> */}
             <Grid.Col span={{ base: 12, sm: 12, md: 10, lg: 10 }}>
               <FeedSeq
                 type='Create'
@@ -235,7 +237,6 @@ const Dashboard = () => {
                 setPostState={setPostState}
                 postsState={postsState}
                 setPostsState={setPostsState}
-                // setTagsInputValue={setTagsInputValue}
                 submitting={submitting}
                 workspace={workspaceState}
                 folderId={folderId}
@@ -249,7 +250,64 @@ const Dashboard = () => {
             </Grid.Col>
           </Grid>
         </Container>
-      )}
+      )} */}
+
+
+
+      <Suspense fallback={<div>Loading...</div>}>
+
+        <Drawer hiddenFrom="sm" opened={openDrawerLeftNav} size="lg" onClose={closeLeftNavBar} zIndex='1000' radius="md" position="left">
+          <LeftNavDashboardMob
+            // postsState={postsState}
+            workspace={workspaceState}
+            folderId={folderId}
+            foldersState={foldersState}
+            setFoldersState={setFoldersState}
+            leftNavBarActive={leftNavBarActive}
+            setLeftNavBarActive={setLeftNavBarActive}
+          />
+        </Drawer>
+        {!isLoading && session && (
+          <Container fluid style={{ height: 'auto' }}>
+            <Grid>
+              <Grid.Col span={2} py={0} mx={0} visibleFrom="sm">
+                {/* <Grid.Col span={2.5}> */}
+                <LeftNavDashboard
+                  // postsState={postsState}
+                  workspace={workspaceState}
+                  folderId={folderId}
+                  foldersState={foldersState}
+                  setFoldersState={setFoldersState}
+                  leftNavBarActive={leftNavBarActive}
+                  setLeftNavBarActive={setLeftNavBarActive}
+                />
+              </Grid.Col>
+
+
+              {/* <Grid.Col span={9.5} p={0} mb={20} mt={10}> */}
+              <Grid.Col span={{ base: 12, sm: 12, md: 10, lg: 10 }}>
+                <FeedSeq
+                  type='Create'
+                  postState={postState}
+                  setPostState={setPostState}
+                  postsState={postsState}
+                  setPostsState={setPostsState}
+                  // setTagsInputValue={setTagsInputValue}
+                  submitting={submitting}
+                  workspace={workspaceState}
+                  folderId={folderId}
+                  originalPostsState={originalPostsState}
+                  setOriginalPostsState={setOriginalPostsState}
+                  leftNavBarActive={leftNavBarActive}
+                  setLeftNavBarActive={setLeftNavBarActive}
+                  openDrawerLeftNav={openDrawerLeftNav}
+                  setOpenDrawerLeftNav={setOpenDrawerLeftNav}
+                />
+              </Grid.Col>
+            </Grid>
+          </Container>
+        )}
+      </Suspense>
     </>
   )
 }

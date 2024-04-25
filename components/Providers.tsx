@@ -1,6 +1,6 @@
 "use client"
 import { SessionProvider } from 'next-auth/react';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 interface ProviderProps {
     children: ReactNode;
@@ -10,7 +10,9 @@ interface ProviderProps {
 const Provider = ({ children, session }: ProviderProps) => {
     return (
         <SessionProvider session={session}>
-            {children}
+            <Suspense>
+                {children}
+            </Suspense>
         </SessionProvider>
     )
 }

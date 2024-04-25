@@ -8,6 +8,8 @@ import FeedSeq from "@/components/FeedSeq"
 import { signIn, signOut, getProviders, useSession } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation';
 import { useRouter, redirect } from 'next/navigation';
+// import { Suspense } from 'next/client';
+
 
 const Dashboard = () => {
   const { data: session, loading, status } = useSession();

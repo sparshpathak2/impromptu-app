@@ -13,6 +13,18 @@
     /* background-size: 30px 30px, 30px 30px, cover; */
 }
 
+.main-flex-mobile {
+    display: flex;
+    /* position: relative; */
+    height: calc(100vh - rem(54px));
+    gap: 16px;
+    background-image: 
+        radial-gradient(circle at 40% 40%, #F5FBFF, #ffffff),
+        radial-gradient(circle at 60% 60%, #FFF4F3, #ffffff);
+    /* align-items: center;
+    justify-content: center; */
+}
+
 .dashboardHeader {
     position: fixed;
     top: calc(100vh - rem(54px));

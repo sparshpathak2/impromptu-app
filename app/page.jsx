@@ -13,22 +13,25 @@ export default function Home() {
     <>
       <Flex
         className='main-flex'
+        visibleFrom='sm'
       >
-        <Flex direction='column' gap={20}  ml='4vw' w='100%' mt='24vh'>
+        <Flex direction='column' gap={20} ml='4vw' w='100%' mt='24vh'>
           {/* <Text fz={48} mr='auto' fw={800} c='#383838' lh='56px'>The Only Tool You Need To Manage All Your AI Prompts</Text> */}
-          <Title order={1} fz={48} fw={800} mr='auto' c='#383838' lh='56px'>The Only Tool You Need To Manage All Your<br /><span className='gradientText'>AI Prompts</span></Title>
-            <Text fz={18}>Storing, Managing and Sharing Prompts was never been easier!</Text>
-            <Button
-              component='a'
-              href='/sign-in'
-              variant="gradient"
-              gradient={{ from: 'red', to: 'blue', deg: 90 }}
-              // w='auto'
-              mr='auto'
-              rightSection={<IconArrowRight size={14} />}
-            >
-              Get Started for Free
-            </Button>
+          <Title order={1} fz={48} fw={800} mr='auto' c='#383838' lh='56px'>
+            The Only Tool You Need To Manage All Your<br /><span className='gradientText'>AI Prompts</span>
+          </Title>
+          <Text fz={18}>Storing, Managing and Sharing Prompts was never been easier!</Text>
+          <Button
+            component='a'
+            href='/sign-in'
+            variant="gradient"
+            gradient={{ from: 'red', to: 'blue', deg: 90 }}
+            // w='auto'
+            mr='auto'
+            rightSection={<IconArrowRight size={14} />}
+          >
+            Get Started for Free
+          </Button>
         </Flex>
         <Image
           width={750}
@@ -36,6 +39,58 @@ export default function Home() {
           src={heroImage}
           alt='This is banner image'
         />
+        {/* <div className="rings-container">
+          <div className="ring ring-1">
+            <div className="ring ring-2">
+              <div className="ring ring-3">
+                <Image
+                  width={1400}
+                  height={700}
+                  src={heroImage}
+                  alt='This is banner image'
+                />
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+      </Flex>
+
+      <Flex
+        className='main-flex-mobile'
+        hiddenFrom='sm'
+        direction='column'
+        mx='4vw'
+        my='2vw'
+      >
+        <Image
+          // width={750}
+          // width='100vw'
+          height={280}
+          // height='100vw'
+          // height='100%'
+          src={heroImage}
+          alt='This is banner image'
+        />
+        <Flex direction='column' gap={20} ml='4vw' pb='8vw' w='100%'>
+          {/* <Text fz={48} mr='auto' fw={800} c='#383838' lh='56px'>The Only Tool You Need To Manage All Your AI Prompts</Text> */}
+          <Title order={1} fz={34} fw={700} mr='auto' c='#383838' lh='40px'>
+            The Only Tool You Need To Manage All Your <span className='gradientText'>AI Prompts</span>
+          </Title>
+          <Text fz={18}>Storing, Managing and Sharing Prompts was never been easier!</Text>
+          <Button
+            component='a'
+            href='/sign-in'
+            variant="gradient"
+            gradient={{ from: 'red', to: 'blue', deg: 90 }}
+            // w='auto'
+            mr='auto'
+            rightSection={<IconArrowRight size={14} />}
+          >
+            Get Started for Free
+          </Button>
+        </Flex>
+        
         {/* <div className="rings-container">
           <div className="ring ring-1">
             <div className="ring ring-2">

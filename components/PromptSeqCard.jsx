@@ -199,7 +199,7 @@ const PromptSeqCard = ({ post, postsState, setPostState, setPostsState, formSubm
           <Flex direction='column'>
 
             <Flex justify="space-between" align='flex-start' gap={8} mt="md" mb="xs" style={{ height: '50px', overflow: 'hidden' }}>
-              <Anchor underline='never' c='black' href={`http://localhost:3000/prompt-sequence?id=${promptSequenceId}`}>
+              <Anchor underline='never' c='black' href={`/prompt-sequence?id=${promptSequenceId}`}>
                 <ClippedText text={post.promptSequenceTitle} maxLength={45} />
               </Anchor>
               {/* <Badge color="pink">On Sale</Badge> */}

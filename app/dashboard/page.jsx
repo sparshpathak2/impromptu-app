@@ -205,7 +205,7 @@ const Dashboard = () => {
         <Flex justify='center' mt={36}>
           <Loader color="blue" type="bars" size='sm' />
         </Flex>
-      }
+      } */}
       <Drawer hiddenFrom="sm" opened={openDrawerLeftNav} size="lg" onClose={closeLeftNavBar} zIndex='1000' radius="md" position="left">
         <LeftNavDashboardMob
           workspace={workspaceState}
@@ -250,11 +250,11 @@ const Dashboard = () => {
             </Grid.Col>
           </Grid>
         </Container>
-      )} */}
+      )}
 
 
 
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}>
 
         <Drawer hiddenFrom="sm" opened={openDrawerLeftNav} size="lg" onClose={closeLeftNavBar} zIndex='1000' radius="md" position="left">
           <LeftNavDashboardMob
@@ -271,9 +271,7 @@ const Dashboard = () => {
           <Container fluid style={{ height: 'auto' }}>
             <Grid>
               <Grid.Col span={2} py={0} mx={0} visibleFrom="sm">
-                {/* <Grid.Col span={2.5}> */}
                 <LeftNavDashboard
-                  // postsState={postsState}
                   workspace={workspaceState}
                   folderId={folderId}
                   foldersState={foldersState}
@@ -284,7 +282,6 @@ const Dashboard = () => {
               </Grid.Col>
 
 
-              {/* <Grid.Col span={9.5} p={0} mb={20} mt={10}> */}
               <Grid.Col span={{ base: 12, sm: 12, md: 10, lg: 10 }}>
                 <FeedSeq
                   type='Create'
@@ -292,7 +289,6 @@ const Dashboard = () => {
                   setPostState={setPostState}
                   postsState={postsState}
                   setPostsState={setPostsState}
-                  // setTagsInputValue={setTagsInputValue}
                   submitting={submitting}
                   workspace={workspaceState}
                   folderId={folderId}
@@ -307,7 +303,7 @@ const Dashboard = () => {
             </Grid>
           </Container>
         )}
-      </Suspense>
+      </Suspense> */}
     </>
   )
 }
